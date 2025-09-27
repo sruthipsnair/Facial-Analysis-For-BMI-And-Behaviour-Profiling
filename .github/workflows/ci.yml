@@ -1,0 +1,29 @@
+name: CI - Notebooks + Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-notebooks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install nbconvert nbformat
+
+      - name: Execute small smoke notebook (convert/execute)
+        run: |
+          # execute a quick/lightweight notebook (create a tiny smoke notebook if current ones train long)
+          jupyter nbconvert --to notebook --execute code/prml_rsnet50.ipynb --ExecutePreprocessor.timeout=600 --output executed/prml_rsnet50_executed.ipynb
