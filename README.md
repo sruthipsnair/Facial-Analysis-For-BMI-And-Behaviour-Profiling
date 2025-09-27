@@ -1,4 +1,4 @@
-\# PRML Project — Facial Analysis for Behavioral Profiling
+ PRML Project — Facial Analysis for Behavioral Profiling
 
 
 
@@ -18,11 +18,10 @@ Structure:
 
 \- code/ (notebooks)
 
-\- project dataset/ (kept out of repo; see README for download)
+\- project dataset
+\- prml ppt
 
-\- prml ppt/
-
-\- prml project report/
+\- prml project report
 
 
 
