@@ -1,0 +1,32 @@
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+*.egg-info/
+
+# Virtual envs
+venv/
+.venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data & models (do not commit large datasets or model weights)
+project dataset/
+project dataset/*
+data/
+models/
+*.h5
+*.pth
+
+# Windows
+desktop.ini
